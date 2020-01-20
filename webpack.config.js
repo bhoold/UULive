@@ -23,7 +23,7 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
+    .addEntry('app', './assets/js/app.jsx')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
@@ -53,6 +53,26 @@ Encore
         config.corejs = 3;
     })
 
+    /*
+    .configureBabel(function(babelConfig) {
+        // add additional presets
+        babelConfig.presets.push('@babel/preset-flow');
+
+        // no plugins are added by default, but you can add some
+        babelConfig.plugins.push('styled-jsx/babel');
+    }, {
+        // node_modules is not processed through Babel by default
+        // but you can whitelist specific modules to process
+        include_node_modules: ['foundation-sites'],
+
+        // or completely control the exclude rule (note that you
+        // can't use both "include_node_modules" and "exclude" at
+        // the same time)
+        exclude: /bower_components/
+    })
+    */
+
+
     // enables Sass/SCSS support
     .enableSassLoader()
 
@@ -67,8 +87,23 @@ Encore
     //.autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
-    //.enableReactPreset()
+    .enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
+
+    .enablePostCssLoader()
+
+    .copyFiles({ //为twig文件的asset函数提供支持
+        from: './assets/images',
+        // optional target path, relative to the output dir
+        to: 'images/[path][name].[ext]',
+
+        // if versioning is enabled, add the file hash too
+        //to: 'images/[path][name].[hash:8].[ext]',
+
+        // only copy files matching this pattern
+        pattern: /\.(png|jpg|jpeg)$/
+    })
+
 ;
 
 module.exports = Encore.getWebpackConfig();

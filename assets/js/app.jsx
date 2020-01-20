@@ -16,7 +16,10 @@ console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 //let $ = require('jquery');
 //let greet = require('./greet');
 import $ from 'jquery';
-import greet from './greet';
+import greet from './reacttest';
+
+
+
 $(document).ready(function() {
     $('body').prepend('<h1>'+greet('morenwen')+'</h1>');
 });

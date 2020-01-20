@@ -1,20 +1,338 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block html_title %}Hello IndexController!{% endblock %}
+{% block head_css %}{{ encore_entry_link_tags('css/home') }}{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/Code/www/php7.3.4/symfony/demo_full/src/Controller/IndexController.php'|file_link(0) }}">src/Controller/IndexController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/Code/www/php7.3.4/symfony/demo_full/templates/index/index.html.twig'|file_link(0) }}">templates/index/index.html.twig</a></code></li>
-    </ul>
+{% block layout %}
+<div id="header">
+	<div class="container">
+		<h1 class="logo"><a href="http://localhost:1073/UULiveStream/site/index.php"><img src="{{ asset('build/images/logo.png') }}" alt=""></a></h1>
+		<div class="nav">
+			<a href="http://localhost:1073/UULiveStream/site/index.php" class="active">首页</a><a href="http://localhost:1073/UULiveStream/site/index.php/Streamer" class="">广场</a><a href="http://localhost:1073/UULiveStream/site/index.php/Ranking" class="">排行榜</a><a href="http://localhost:1073/UULiveStream/site/index.php/Shop" class="">商城</a>		</div>
+		<div class="search">
+			<input type="text" class="input-search" placeholder="输入用户名，用户ID或标题">
+			<button type="button" class="btn-search">
+				<i class="layui-icon layui-icon-search"></i>
+			</button>
+		</div>
+		<div class="user">
+				<!--
+			<a class="person" href="http://localhost:1073/UULiveStream/site/index.php/Person">
+				<div class="avatar">
+					<img src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="">
+				</div>
+				<span class="name">我是大佬虎</span>
+			</a>-->
+			<div class="noLogin" style="margin-left: 1em;">
+			<span class="btn-login">登录</span>
+			<span>/</span>
+			<span class="btn-signup">注册</span>
+			</div>
+		</div>
+	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+<div id="body">
+<div class="container">
+	<div id="main">
+		<div class="block focus">
+			<div class="item"><a href="http://localhost:1073/UULiveStream/site/index.php/Streamer/room/5">
+				<img class="cover" src="https://alcdn.img.xiaoka.tv/20190730/280/8cc/33144982/2808cc3b3fae0c23520dfae4cae9496c.jpg@1e_1c_0o_0l_670h_670w_100q_1pr.webp" alt="品冠victor的头像">
+				<div class="summary">
+					<p class="name">万能小狠。</p>
+					<p class="title">快来我的直播间</p>
+				</div></a>
+			</div>
+			<div class="item"><a href="">
+				<img class="cover" src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="头像">
+				<div class="summary">
+					<p class="name">万能小狠。</p>
+				</div></a>
+			</div>
+		</div>
+		<div class="block new">
+			<h2><i class="layui-icon layui-icon-find-fill"></i> <span>最新入驻</span></h2>
+			<div class="list">
+				<div class="item"><a href="">
+					<img class="cover" src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="头像">
+					<div class="summary">
+						<p class="title">今晚赏心的风景</p>
+						<p class="name">万能小狠。</p>
+					</div></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="class">
+		<div class="block tag1">
+			<h2><i class="layui-icon layui-icon-voice"></i> <span>好声音</span></h2>
+			<div class="list">
+                <div class="item"><a href="">
+                    <img class="cover" src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="头像">
+                    <div class="summary">
+                        <p class="name">万能小狠。</p>
+                    </div></a>
+                </div>
+			</div>
+		</div>
+		<div class="block tag2">
+			<h2><i class="layui-icon layui-icon-voice"></i> <span>舞蹈</span></h2>
+			<div class="list">
+                <div class="item"><a href="">
+                    <img class="cover" src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="头像">
+                    <div class="summary">
+                        <p class="name">万能小狠。</p>
+                    </div></a>
+                </div>
+			</div>
+		</div>
+		<div class="block tag3">
+			<h2><i class="layui-icon layui-icon-voice"></i> <span>女神</span></h2>
+			<div class="list">
+                <div class="item"><a href="">
+                    <img class="cover" src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="头像">
+                    <div class="summary">
+                        <p class="name">万能小狠。</p>
+                    </div></a>
+                </div>
+			</div>
+		</div>
+		<div class="block tag4">
+			<h2><i class="layui-icon layui-icon-voice"></i> <span>知识</span></h2>
+			<div class="list">
+                <div class="item"><a href="">
+                    <img class="cover" src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="头像">
+                    <div class="summary">
+                        <p class="name">万能小狠。</p>
+                    </div></a>
+                </div>
+			</div>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<div class="block streamer">
+			<h2><i class="layui-icon layui-icon-menu-fill"></i> <span>主播</span></h2>
+			<div class="list">
+                <div class="item"><a href="">
+                    <img class="cover" src="https://alcdn.img.xiaoka.tv/20190729/a6b/2fb/4634786/a6b2fbdb2db9399c0448c6f3b764d2b0.jpg@1e_1c_0o_0l_192h_192w_100q_1pr.webp" alt="头像">
+                    <div class="summary">
+                        <p class="name">万能小狠。</p>
+                        <p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+                    </div></a>
+                </div>
+			</div>
+		</div>
+	</div>
+	<div id="side">
+		<div class="block hot">
+			<h2><i class="layui-icon layui-icon-fire"></i> <span>当前最热</span></h2>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal1.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal2.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal3.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">4</div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">5</div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">6</div>
+				<div class="avatar"><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">7</div>
+				<div class="avatar"><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></div>
+				<div class="info">
+					<p class="name"><span>杨大壮96KG</span> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">8</div>
+				<div class="avatar"><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></div>
+				<div class="info">
+					<p class="name"><span>杨大壮96KG</span> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">9</div>
+				<div class="avatar"><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></div>
+				<div class="info">
+					<p class="name"><span>杨大壮96KG</span> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">10</div>
+				<div class="avatar"><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></div>
+				<div class="info">
+					<p class="name"><span>杨大壮96KG</span> <i class="layui-icon layui-icon-video"></i></p>
+					<p class="numbers"><i class="layui-icon layui-icon-user"></i> <span>123443</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="block streamer">
+			<h2>
+				<span>主播榜</span>
+				<div class="period">
+					<a href="" class="active">日</a>
+					<span>|</span>
+					<a href="">周</a>
+					<span>|</span>
+					<a href="">月</a>
+				</div>
+			</h2>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal1.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal2.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal3.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">4</div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">5</div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="block toff">
+			<h2>
+				<span>富豪榜</span>
+				<div class="period">
+					<a href="" class="active">日</a>
+					<span>|</span>
+					<a href="">周</a>
+					<span>|</span>
+					<a href="">月</a>
+				</div>
+			</h2>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal1.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal2.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item big">
+				<div class="ranking"><img src="http://static.yizhibo.com/pc_live/static/img/dresser_medal3.png" alt=""></div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">4</div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+			<div class="item">
+				<div class="ranking">5</div>
+				<div class="avatar"><a href=""><img src="https://alcdn.img.xiaoka.tv/20190406/1c1/a24/196684336/1c1a242ef4001a1d45a6de7b96539591.jpg@1e_1c_0o_0l_140h_140w_100q_1pr.webp" alt="👑伟爵爷的头像"></a></div>
+				<div class="info">
+					<p class="name"><a href=""><span>杨大壮96KG</span></a></p>
+					<p class="numbers"><span>礼物：</span> <span>123443</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="footer">
+<p>优优网络科技有限公司 Copyright UUnetwork ALL right reserved.     联系我们    电话：13555555555</p>
+</div>
+
+
+
+
+
+
+
+{{ encore_entry_script_tags('js/home') }}
 {% endblock %}

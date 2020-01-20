@@ -1,29 +1,65 @@
-{# templates/base.html.twig #}
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- ... -->
-
-        {% block stylesheets %}
-            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
-            {{ encore_entry_link_tags('app') }}
-
-            <!-- Renders a link tag (if your module requires any CSS)
-                 <link rel="stylesheet" href="/build/app.css"> -->
-        {% endblock %}
-    </head>
-    <body>
-        <!-- ... -->
-{# assets/images/a.png was copied to public/build/a.png #}
-<img src="{{ asset('build/images/a.png') }}" alt="ACME logo">
+{% block html_head %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{% block html_title %}优优直播{% endblock %}</title>
+    {% block global_css %}{{ encore_entry_link_tags('css/layout') }}{% endblock %}
+    {% block head_css %}{% endblock %}
+    {% block global_js %}{{ encore_entry_script_tags('js/layout') }}{% endblock %}
+</head>
+{% endblock %}
+{% block html_body %}
+<body>
+    {% block layout %}{% endblock %}
 
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-
-            <!-- Renders app.js & a webpack runtime.js file
-                <script src="/build/runtime.js"></script>
-                <script src="/build/app.js"></script> -->
-        {% endblock %}
-    </body>
+    <div id="loginModal">
+        <div class="mask"></div>
+        <div class="content">
+            <span class="close"><i class="layui-icon layui-icon-close"></i></span>
+            <h3 class="title">账号登录</h3>
+            <div class="form">
+                <div class="item">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="账号" autocomplete="off" class="layui-input">
+                </div>
+                <div class="item">
+                    <input type="password" name="password" required  lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="item">
+                <button type="button" class="layui-btn layui-btn-primary">登录</button>
+                </div>
+            </div>
+            <div class="footer">
+                <p>没有账号？赶紧<a class="btnForSignup">注册</a>一个</p>
+            </div>
+        </div>
+    </div>
+    <div id="signupModal">
+        <div class="mask"></div>
+        <div class="content">
+            <span class="close"><i class="layui-icon layui-icon-close"></i></span>
+            <h3 class="title">账号注册</h3>
+            <div class="form">
+                <div class="item">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="账号" autocomplete="off" class="layui-input">
+                </div>
+                <div class="item">
+                    <input type="password" name="password" required  lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="item">
+                    <input type="password" name="repassword" required  lay-verify="required" placeholder="确认密码" autocomplete="off" class="layui-input" onpaste="return false;">
+                </div>
+                <div class="item">
+                <button type="button" class="layui-btn layui-btn-primary">注册</button>
+                </div>
+            </div>
+            <div class="footer">
+                <p>已有账号？直接<a class="btnForLogin">登录</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
 </html>

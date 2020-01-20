@@ -23,8 +23,13 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.jsx')
-    //.addEntry('page1', './assets/js/page1.js')
+    .addEntry('js/layout', './assets/js/layout.jsx')
+    .addStyleEntry('css/layout', ['./assets/scss/layout.scss'])
+
+
+    .addEntry('js/home', './assets/js/home.jsx')
+    .addStyleEntry('css/home', ['./assets/scss/home.scss'])
+
     //.addEntry('page2', './assets/js/page2.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
@@ -92,7 +97,7 @@ Encore
 
     .enablePostCssLoader()
 
-    .copyFiles({ //为twig文件的asset函数提供支持
+    .copyFiles({ //复制/assets/images下的图片文件到/public/build目录
         from: './assets/images',
         // optional target path, relative to the output dir
         to: 'images/[path][name].[ext]',

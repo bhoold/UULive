@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>{% block html_title %}优优直播{% endblock %}</title>
+
+
+    
     {% block global_css %}{{ encore_entry_link_tags('css/layout') }}{% endblock %}
     {% block head_css %}{% endblock %}
     {% block global_js %}{{ encore_entry_script_tags('js/layout') }}{% endblock %}
@@ -13,7 +16,6 @@
 {% block html_body %}
 <body>
     {% block layout %}{% endblock %}
-
 
     <div id="loginModal">
         <div class="mask"></div>

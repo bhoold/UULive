@@ -22,6 +22,12 @@ use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
 
 
 
+
+use Symfony\Contracts\Translation\TranslatorInterface;
+
+
+
+
 class DemoController extends AbstractController
 {
     /**
@@ -89,5 +95,18 @@ class DemoController extends AbstractController
 
 
         return new Response();
+    }
+
+    /**
+     * @Route("/demo/trans", name="demo_trans")
+     */
+    public function trans(TranslatorInterface $translator)
+    {
+
+        $translated = $translator->trans('Symfony is great');
+
+        return $this->render('demo/trans.html.twig', [
+            'translated' => $translated,
+        ]);
     }
 }

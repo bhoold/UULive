@@ -1,14 +1,30 @@
 security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        users_in_memory: { memory: null }
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
     firewalls:
+        #secured_area:
+        #    methods: [GET, POST]
+        #secured_area:
+        #    host: ^admin\.example\.com$
+        #secured_area:
+        #    pattern: ^/admin
+        #custom:
+        #    request_matcher: app.firewall.secured_area.request_matcher
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: lazy
-            provider: users_in_memory
+            provider: app_user_provider
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

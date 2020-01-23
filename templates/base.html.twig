@@ -16,6 +16,7 @@
 {% block html_body %}
 <body>
     {% block layout %}{% endblock %}
+{% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 
     <div id="loginModal">
         <div class="mask"></div>
@@ -62,6 +63,8 @@
             </div>
         </div>
     </div>
+
+{% endif %}
 </body>
 {% endblock %}
 </html>

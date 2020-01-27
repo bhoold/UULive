@@ -9,6 +9,16 @@ npm run build #生成前端压缩文件
 
 ## symfony常用命令
 ```bash
+## 创建项目
+composer create-project symfony/website-skeleton my_project_name
+
+
+
+## 更新前端文件
+npm run dev
+
+
+
 ## 国际化配置/translations/messages.zh_CN.yaml
 php bin/console translation:update --dump-messages zh_CN #显示需要国际化的字段
 php bin/console translation:update --force zh_CN 生成中文
@@ -40,6 +50,11 @@ php bin/console make:user
 php bin/console make:migration
 //导入数据库
 php bin/console doctrine:migrations:migrate
+
+
+
+## 创建用户注册功能和页面
+php bin/console make:registration-form
 
 
 

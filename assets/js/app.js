@@ -17,6 +17,9 @@ import 'bootstrap';
 // require('bootstrap/js/dist/tooltip');
 // require('bootstrap/js/dist/popover');
 
+//https://feathericons.com/
+import feather from 'feather-icons';
+
 /*
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
@@ -25,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 $(document).ready(()=>{
+    feather.replace()
+    
     console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 });
 

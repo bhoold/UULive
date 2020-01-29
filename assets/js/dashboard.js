@@ -6,14 +6,9 @@ import '../scss/dashboard.scss';
 //https://www.chartjs.org/
 import Chart from 'chart.js';
 
-//https://feathericons.com/
-import feather from 'feather-icons';
-
 
 (function () {
     'use strict'
-  
-    feather.replace()
   
     // Graphs
     var ctx = document.getElementById('myChart')

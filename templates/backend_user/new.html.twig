@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New BackendUser{% endblock %}
+
+{% block body %}
+    <h1>Create new BackendUser</h1>
+
+    {{ include('backend_user/_form.html.twig') }}
+
+    <a href="{{ path('backend_user_index') }}">back to list</a>
+{% endblock %}

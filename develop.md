@@ -14,7 +14,7 @@ npm run dev
 
 ## 国际化配置/translations/messages.zh_CN.yaml
 php bin/console translation:update --dump-messages zh_CN #显示需要国际化的字段
-php bin/console translation:update --force zh_CN 生成中文
+php bin/console translation:update --force zh_CN #生成中文
 
 
 

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DemoController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'D:/Code/github/uulive/src/Controller/DemoController.php'|file_link(0) }}">src/Controller/DemoController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'D:/Code/github/uulive/templates/demo/index.html.twig'|file_link(0) }}">templates/demo/index.html.twig</a></code></li>
+        <li>Your template at <code><a href="{{ path('ademo') }}">ademo</a></code></li>
+        <li>Your template at <code><a href="{{ path('bdemo') }}">bdemo</a></code></li>
+        <li>Your template at <code><a href="{{ path('cdemo') }}">cdemo</a></code></li>
+        <li>Your template at <code><a href="{{ path('ddemo') }}">ddemo</a></code></li>
+        <li>Your template at <code><a href="{{ path('demo') }}">demo</a></code></li>
+    </ul>
+</div>
+{% endblock %}

@@ -55,3 +55,14 @@ php bin/console make:registration-form
 php bin/console make:auth
 
 ```
+
+## linux命令
+```bash
+#http://www.kwx.gd/CentOSApp/CentOS-Apache-Bench.html
+## 服务器压力测试
+ab -n3000 -c1000 http://ip/
+
+
+ulimit -a //查看限制
+ulimit –n 2000 //修改同时打开文件句柄数量
+```
